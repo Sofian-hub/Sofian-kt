@@ -1,0 +1,15 @@
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+/* Empêche les éléments de dépasser la largeur de l'écran */
+img, iframe, video, .container, .calculator, .fixed-button, section, .modal, #contact {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+.w-screen {
+  max-width: 100vw !important;
+  overflow-x: hidden;
+}
