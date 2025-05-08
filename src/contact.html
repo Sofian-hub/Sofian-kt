@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Neymar JR</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.18/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/jpg" href="static/envolope.jpg">
+</head>
+<body class="bg-gradient-to-br from-green-100 to-yellow-50 min-h-screen flex items-center justify-center p-4">
+
+    <div id="toast-container" class="toast toast-top toast-center hidden">
+      <div class="alert alert-success shadow-lg">
+        <span>✅ Message envoyé avec succès !</span>
+      </div>
+    </div>
+  
+    <div class="w-full max-w-2xl p-10 bg-white shadow-2xl rounded-3xl border border-green-300">
+      <h1 class="text-4xl font-bold text-center mb-6 text-green-600">Contactez moi ! 💬</h1>
+      <p class="text-center text-gray-600 mb-8">Remplis le formulaire ci-dessous pour m’envoyer un message !</p>
+  
+      <form id="contact-form" class="flex flex-col gap-5">
+        <label class="form-control w-full">
+          <div class="label">
+            <span class="label-text font-semibold text-green-600">Ton nom</span>
+          </div>
+          <input type="text" id="nom" placeholder="Ex: Jean Dupont" class="input input-bordered w-full" required />
+        </label>
+  
+        <label class="form-control w-full">
+          <div class="label">
+            <span class="label-text font-semibold text-green-600">Ton email</span>
+          </div>
+          <input type="email" id="email" placeholder="exemple@email.com" class="input input-bordered w-full" required />
+        </label>
+  
+        <label class="form-control">
+          <div class="label">
+            <span class="label-text font-semibold text-green-600">Ton message</span>
+          </div>
+          <textarea id="message" class="textarea textarea-bordered h-32" placeholder="Écris ton message ici..." required></textarea>
+        </label>
+  
+        <button type="submit" class="btn bg-gradient-to-r from-green-500 to-yellow-400 text-white font-bold hover:scale-105 transition-all">
+          ✉️ Envoyer le message
+        </button>
+      </form>
+      
+      <!-- boutton pour retourner sur la oage principale -->
+      <a href="index.html" class="mt-6 block text-center">
+        <span class="block mt-2 text-yellow-600 font-semibold">Retour à l'accueil</span>
+      </a>
+    </div>
+  
+    <script>
+      const form = document.getElementById('contact-form');
+      const toast = document.getElementById('toast-container');
+  
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+  
+        // Affiche le toast
+        toast.classList.remove("hidden");
+  
+        // Réinitialise les champs
+        form.reset();
+  
+        // Cache le toast après 4 secondes
+        setTimeout(() => {
+          toast.classList.add("hidden");
+        }, 4000);
+      });
+    </script>
+  </body>
+  </html>
